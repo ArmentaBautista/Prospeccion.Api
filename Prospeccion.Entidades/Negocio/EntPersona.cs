@@ -9,7 +9,7 @@ public partial class EntPersona:EntBase
 
     public string? ApellidoMaterno { get; set; }
 
-    public DateOnly? FechaNacimiento { get; set; }
+    public DateTime FechaNacimiento { get; set; } = new DateTime(2000, 1, 1);
 
     public string NombreCompleto { get; set; } = null!;
 

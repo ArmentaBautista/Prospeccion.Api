@@ -55,7 +55,7 @@ public partial class ProspeccionContext : DbContext
 
             entity.ToTable("tGestiones");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Fecha).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Hora).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Estatus).HasDefaultValue(1);

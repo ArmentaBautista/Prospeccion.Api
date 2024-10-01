@@ -1,6 +1,6 @@
 
 create table  tGestiones(
-	Id int primary key,
+	Id int primary key identity,
 	IdGestor int
 		constraint FK_tGestiones_IdGestor
 			references tGestores(Id),

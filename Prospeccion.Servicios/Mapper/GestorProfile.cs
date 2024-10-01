@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Prospeccion.Dto.Request;
 
 namespace Prospeccion.Servicios.Mapper
 {
@@ -13,7 +14,7 @@ namespace Prospeccion.Servicios.Mapper
     {
         public GestorProfile()
         {
-            CreateMap<EntGestorDtoResponse, EntGestor>();
+            CreateMap<EntGestorDtoRequest, EntGestor>();
             CreateMap<EntGestor,EntGestorDtoResponse>();
         }
     }

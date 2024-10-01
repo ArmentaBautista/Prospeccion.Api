@@ -6,5 +6,5 @@ namespace Prospeccion.Servicios.Interfaces;
 public interface IGestorServicio
 {
     Task<RespuestaBaseDto<EntGestorDtoResponse>> Registrar(EntGestorDtoRequest gestorDtoRequest);
-    Task<RespuestaPaginacionDto<EntActividadDtoResponse>> Listar(PaginacionDtoRequest paginacionDtoRequest);
+    Task<RespuestaPaginacionDto<EntGestorDtoResponse>> Listar(PaginacionDtoRequest paginacionDtoRequest);
 }

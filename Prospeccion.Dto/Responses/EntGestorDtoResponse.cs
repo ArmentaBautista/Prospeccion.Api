@@ -2,6 +2,6 @@
 
 public class EntGestorDtoResponse
 {
-    public string Nombre { get; set; } = null!;
+    public string usuario { get; set; } = null!;
 
 }

@@ -9,9 +9,9 @@ public partial class EntPersonaDtoRequest
 
     public string? ApellidoMaterno { get; set; }
 
-    public DateOnly? FechaNacimiento { get; set; }
+    public DateTime FechaNacimiento { get; set; } = new DateTime(2000, 1, 1);
 
-    public string NombreCompleto { get; set; } = null!;
+    public string? NombreCompleto { get; set; } = string.Empty;
 
     public string? Domicilio { get; set; }
 

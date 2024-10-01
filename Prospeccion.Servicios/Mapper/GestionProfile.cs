@@ -15,7 +15,7 @@ namespace Prospeccion.Servicios.Mapper
         public GestionProfile()
         {
             CreateMap<EntGestionDtoRequest, EntGestion>();
-            CreateMap<EntGestion, EntGestorDtoResponse>();
+            CreateMap<EntGestion, EntGestionDtoResponse>();
         }
     }
 }
