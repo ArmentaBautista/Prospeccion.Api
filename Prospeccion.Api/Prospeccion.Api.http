@@ -1,0 +1,6 @@
+@Prospeccion.Api_HostAddress = http://localhost:5232
+
+GET {{Prospeccion.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
