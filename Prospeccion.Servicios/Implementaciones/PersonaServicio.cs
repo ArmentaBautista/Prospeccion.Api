@@ -13,7 +13,7 @@ public class PersonaServicio:IPersonaServicio
     private IPersonaRepository _repositorio;
     private IMapper _mapper;
 
-    public PersonaServicio(IResultadoRepository repositorio, IMapper mapper)
+    public PersonaServicio(IPersonaRepository repositorio, IMapper mapper)
     {
         _repositorio = repositorio;
         _mapper = mapper;

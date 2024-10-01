@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Prospeccion.Servicios\Prospeccion.Servicios.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

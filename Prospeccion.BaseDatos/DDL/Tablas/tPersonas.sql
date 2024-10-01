@@ -10,7 +10,7 @@ create table tPersonas(
 	Telefono char(10) default '',
 	Fecha date default getdate() NOT NULL,
 	Hora time default getdate() NOT NULL,
-	Estatus tinyint default 1
+	Estatus int default 1
 )
 GO
 
