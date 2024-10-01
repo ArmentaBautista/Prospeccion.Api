@@ -25,6 +25,7 @@ public partial class SeguridadDbContext : DbContext
     public virtual DbSet<Permiso> Permisos { get; set; }
 
     public virtual DbSet<Puesto> Puestos { get; set; }
+    public virtual DbSet<UsuarioColaboradorResult> usuarioColaboradorResult { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -219,6 +220,7 @@ public partial class SeguridadDbContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("usuariomodificacion");
         });
+        modelBuilder.Entity<UsuarioColaboradorResult>().HasNoKey();
 
         OnModelCreatingPartial(modelBuilder);
     }

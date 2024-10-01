@@ -14,7 +14,8 @@ public static class ServiciosExtension
             servicio.AddScoped<IGestorServicio, GestorServicio>();
             servicio.AddScoped<IPersonaServicio, PersonaServicio>();
             servicio.AddScoped<IResultadoServicio, ResultadoServicio>();
-            return servicio;
+            servicio.AddScoped<IUsuarioServicio, UsuarioServicio>();
+        return servicio;
         }
     
 }

@@ -12,6 +12,7 @@ public static class PerfilesMapperExtension
         config.AddProfile<GestorProfile>();
         config.AddProfile<PersonaProfile>();
         config.AddProfile<ResultadoProfile>();
+        config.AddProfile<UsuarioPerfil>();
         return config;
     }
 }

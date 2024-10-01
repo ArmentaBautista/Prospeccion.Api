@@ -13,6 +13,7 @@ public static class RepositoriosExtension
         servicio.AddScoped<IGestorRepository, GestorRepository>();
         servicio.AddScoped<IPersonaRepository, PersonaRepository>();
         servicio.AddScoped<IResultadoRepository, ResultadoRepository>();
+        servicio.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
         return servicio;
     }
 }

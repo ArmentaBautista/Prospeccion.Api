@@ -18,7 +18,10 @@ builder.Services.AddDbContext<ProspeccionContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BdProspectacion"));
 });
 // context pg
-//TODO
+builder.Services.AddDbContext<SeguridadDbContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("BdSeguridad"));
+});
 
 // conf JWT appsettings
 //TODO
