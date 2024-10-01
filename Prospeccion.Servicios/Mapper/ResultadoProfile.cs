@@ -15,7 +15,7 @@ namespace Prospeccion.Servicios.Mapper
     {
         public ResultadoProfile()
         {
-            CreateMap<EntResultadoDtoRequest, EntResultadoDtoRequest>();
+            CreateMap<EntResultadoDtoRequest, EntResultado>();
             CreateMap<EntResultado, EntResultadoDtoResponse>();
         }
     }
