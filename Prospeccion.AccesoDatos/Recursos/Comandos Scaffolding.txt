@@ -1,0 +1,9 @@
+﻿
+
+SQL Server
+dotnet ef dbcontext scaffold "server=localhost,1400; database=Prospeccion; user=sa; password=Password2024#; encrypt=false;" Microsoft.EntityframeworkCore.SqlServer -o ContextoProspeccion2
+
+
+Postgres
+dotnet ef dbcontext scaffold "host=localhost:5432; database=SeguridadProspeccion; username=usuario_admin; password=Password2024#;" Npgsql.EntityframeworkCore.PostgreSQL --context SeguridadDbContext --context-dir Contexto
+

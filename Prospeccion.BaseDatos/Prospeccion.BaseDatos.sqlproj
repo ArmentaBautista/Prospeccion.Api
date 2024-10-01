@@ -62,6 +62,7 @@
     <Folder Include="DDL\Procedimientos Almacenados" />
     <Folder Include="DDL\Vistas" />
     <Folder Include="DDL\Funciones" />
+    <Folder Include="DDL_PG" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="DDL\Tablas\tActividades.sql" />
@@ -70,6 +71,9 @@
     <Build Include="DDL\Tablas\tPersonas.sql" />
     <Build Include="DDL\Tablas\tResultados.sql" />
     <Build Include="DDL\Vistas\vActividades.sql" />
+    <None Include="DDL_PG\Tablas.sql" />
+    <None Include="DDL_PG\Inserts.sql" />
+    <None Include="DDL_PG\ObtenerColaborador.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="DML\CargaCatalogos.sql" />
