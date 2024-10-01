@@ -13,7 +13,7 @@ namespace Prospeccion.Entidades.Negocio
         public int Id;
         public DateOnly Fecha { get; set; }=DateOnly.FromDateTime(DateTime.Today);
         public TimeOnly Hora { get; set; }=TimeOnly.FromDateTime(DateTime.Today);
-        public byte Estatus { get; set; } = 1;
+        public int Estatus { get; set; } = 1;
 
     }
 }

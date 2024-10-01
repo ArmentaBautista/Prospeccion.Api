@@ -2,12 +2,12 @@
 
 public partial class EntGestion : EntBase
 {
-    public short? IdGestor { get; set; }
+    public int? IdGestor { get; set; }
     public int? IdPersona { get; set; }
 
-    public byte? IdActividad { get; set; }
+    public int? IdActividad { get; set; }
 
-    public byte? IdResultado { get; set; }
+    public int? IdResultado { get; set; }
 
    public virtual EntActividad? IdActividadNavigation { get; set; }
 

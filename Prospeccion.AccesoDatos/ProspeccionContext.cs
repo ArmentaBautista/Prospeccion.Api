@@ -44,7 +44,7 @@ public partial class ProspeccionContext : DbContext
             entity.Property(e => e.Actividad)
                 .HasMaxLength(24)
                 .IsUnicode(false);
-            entity.Property(e => e.Estatus).HasDefaultValue((byte)1);
+            entity.Property(e => e.Estatus).HasDefaultValue(1);
             entity.Property(e => e.Fecha).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Hora).HasDefaultValueSql("(getdate())");
         });
@@ -58,7 +58,7 @@ public partial class ProspeccionContext : DbContext
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Fecha).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Hora).HasDefaultValueSql("(getdate())");
-            entity.Property(e => e.Estatus).HasDefaultValue((byte)1);
+            entity.Property(e => e.Estatus).HasDefaultValue(1);
 
             entity.HasOne(d => d.IdActividadNavigation).WithMany(p => p.TGestiones)
                 .HasForeignKey(d => d.IdActividad)
@@ -83,8 +83,8 @@ public partial class ProspeccionContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__tGestore__3214EC0795365387");
 
             entity.ToTable("tGestores");
-
-            entity.Property(e => e.Estatus).HasDefaultValue((byte)1);
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.Estatus).HasDefaultValue(1);
             entity.Property(e => e.Fecha).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Hora).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Usuario)
@@ -101,7 +101,7 @@ public partial class ProspeccionContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__tPersona__3214EC0734844A08");
 
             entity.ToTable("tPersonas");
-
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.ApellidoMaterno)
                 .HasMaxLength(32)
                 .IsUnicode(false);
@@ -112,7 +112,7 @@ public partial class ProspeccionContext : DbContext
                 .HasMaxLength(256)
                 .IsUnicode(false)
                 .HasDefaultValue("");
-            entity.Property(e => e.Estatus).HasDefaultValue((byte)1);
+            entity.Property(e => e.Estatus).HasDefaultValue(1);
             entity.Property(e => e.Fecha).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Hora).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Nombre)
