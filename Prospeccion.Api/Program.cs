@@ -1,4 +1,7 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Prospeccion.AccesoDatos;
 using Prospeccion.Repositorios;
 using Prospeccion.Servicios;
@@ -24,7 +27,8 @@ builder.Services.AddDbContext<SeguridadDbContext>(options =>
 });
 
 // conf JWT appsettings
-//TODO
+var jwtSetting = builder.Configuration.GetSection("JwtSettings");
+
 
 // CORS
 builder.Services.AddCors(politicas =>
@@ -36,7 +40,24 @@ builder.Services.AddCors(politicas =>
 });
 
 // JWT
-//TODO
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtSetting["Issuer"],
+            ValidAudience = jwtSetting["Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSetting["SecretKey"]!))
+        };
+    });
 
 // Mid, Serv, Rep
 builder.Services.AddAutoMapper(config => PerfilesMapperExtension.AddPerfilesMapper(config));
@@ -54,6 +75,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

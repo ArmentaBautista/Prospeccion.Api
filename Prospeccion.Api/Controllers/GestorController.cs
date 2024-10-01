@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Prospeccion.Dto.Request;
 using Prospeccion.Entidades.Negocio;
 using Prospeccion.Servicios.Interfaces;
@@ -23,7 +24,7 @@ namespace Prospeccion.Api.Controllers
             return resultado.success ? Ok(resultado) : BadRequest(resultado);
 
         }
-
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Post(EntGestorDtoRequest request)
         {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Prospeccion.Dto.Request;
 using Prospeccion.Servicios.Interfaces;
 
@@ -15,6 +16,7 @@ namespace Prospeccion.Api.Controllers
             _servicio=servicio;
         }
 
+        
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] PaginacionDtoRequest request)
         {
@@ -22,6 +24,7 @@ namespace Prospeccion.Api.Controllers
             return resultado.success ? Ok(resultado) : BadRequest(resultado);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Post(EntGestionDtoRequest request)
         {
